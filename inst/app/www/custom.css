@@ -1,0 +1,8 @@
+
+/* para mudar a imagem de fundo do app */
+body {
+    /*background-image: url("bg.png"); */
+    background-image: url("Frame 2.svg");
+    background-size: cover;
+}
+
