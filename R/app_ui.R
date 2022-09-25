@@ -4,13 +4,46 @@
 #'     DO NOT REMOVE.
 #' @import shiny
 #' @noRd
+
 app_ui <- function(request) {
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-    fluidPage(
-      h1("InsuinaHistoricoDash2ProjFinal")
+
+    # import fontawesome icons
+    # font: https://appsilon.com/r-shiny-fontawesome-icons/
+    tags$script(src = "https://kit.fontawesome.com/59cba208a1.js"),
+
+    bs4Dash::dashboardPage(
+      title = "Basic Dashboard",
+      header = bs4Dash::dashboardHeader(),
+      sidebar = bs4Dash::dashboardSidebar(),
+      # controlbar = bs4Dash::dashboardControlbar(),
+      body = bs4Dash::dashboardBody(),
+      footer = bs4Dash::dashboardFooter(
+        left = tags$div(
+          # import github icon
+          tags$i(class = "fa-brands fa-github", style = "font-size: 1.2rem; color:#9E3FED;"),
+          # text and link of github profile
+          tags$a(
+            href = "https://github.com/maykongpedro",
+            target = "_blank", "@maykongpedro"
+          ),
+          # write white spaces using pure HTML
+          # font: https://www.freecodecamp.org/news/html-space-how-to-add-a-non-breaking-space-with-the-nbsp-character-entity/
+          HTML("&emsp; | &emsp;"),
+          # linkedin icon
+          tags$i(class = "fa-brands fa-linkedin", style = "font-size: 1.2rem; color:#3FA1ED;"),
+          # linkedin profile
+          tags$a(
+            href = "https://www.linkedin.com/in/maykon-gabriel-5ab009170/o",
+            target = "_blank", "@Maykon Gabriel"
+          )
+        ),
+        right = "2022"
+      ),
+      dark = NULL # nao exibir toogle para trocar de dark para light mode
     )
   )
 }
